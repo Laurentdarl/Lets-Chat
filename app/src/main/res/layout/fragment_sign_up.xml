@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".presentation.fragments.registration.SignUpFragment">
+
+<TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="@string/sign_up"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tf_names"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.110" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tf_names"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:hint="@string/names"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tif_names"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/purple_700"
+            android:inputType="textPersonName" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tf_email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="@id/tf_names"
+        app:layout_constraintStart_toStartOf="@id/tf_names"
+        app:layout_constraintTop_toBottomOf="@id/tf_names">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tif_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/purple_700"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tf_phone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/phone_number"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="@id/tf_email"
+        app:layout_constraintStart_toStartOf="@id/tf_email"
+        app:layout_constraintTop_toBottomOf="@id/tf_email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tif_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_phone_number"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/purple_700"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tf_password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        app:endIconMode="clear_text"
+        app:counterEnabled="true"
+        app:counterMaxLength="15"
+        app:layout_constraintEnd_toEndOf="@+id/tf_phone"
+        app:layout_constraintStart_toStartOf="@+id/tf_phone"
+        app:layout_constraintTop_toBottomOf="@id/tf_phone">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tif_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            android:drawableStart="@drawable/ic_password"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/purple_700"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tf_repeat_password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/repeat_password"
+        app:passwordToggleEnabled="true"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="@+id/tf_password"
+        app:layout_constraintStart_toStartOf="@+id/tf_password"
+        app:layout_constraintTop_toBottomOf="@id/tf_password">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tif_repeat_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTint="@color/purple_700"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/tf_repeat_password"
+        app:layout_constraintStart_toStartOf="@+id/tf_repeat_password"
+        app:layout_constraintTop_toBottomOf="@+id/tf_repeat_password" />
+
+
+    <TextView
+        android:id="@+id/tv_anonymous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/negative_background"
+        android:padding="8dp"
+        android:text="@string/sign_in_anonymously"
+        android:textColor="#EA0303"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView2"-->
+<!--        android:layout_width="40dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:src="@drawable/ic_intro_note"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/tf_names"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textView"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
