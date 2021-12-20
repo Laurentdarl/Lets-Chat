@@ -4,10 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/USER/AndroidStudioProjects/LetsChatApplication/app/src/main/res/drawable-v24/ic_email.xml" value="0.2203125" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/LetsChatApplication/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/LetsChatApplication/app/src/main/res/layout/fragment_chat.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/LetsChatApplication/app/src/main/res/layout/activity_main.xml" value="0.12682926829268293" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/LetsChatApplication/app/src/main/res/layout/chat_items.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/LetsChatApplication/app/src/main/res/layout/fragment_chat.xml" value="0.22" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/LetsChatApplication/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/LetsChatApplication/app/src/main/res/layout/fragment_sign_in.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/LetsChatApplication/app/src/main/res/layout/fragment_sign_up.xml" value="0.12682926829268293" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/LetsChatApplication/app/src/main/res/layout/progress_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/LetsChatApplication/app/src/main/res/menu/options_menu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

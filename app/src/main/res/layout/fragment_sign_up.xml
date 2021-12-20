@@ -94,7 +94,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/password"
-        app:endIconMode="clear_text"
+        app:passwordToggleEnabled="true"
         app:counterEnabled="true"
         app:counterMaxLength="15"
         app:layout_constraintEnd_toEndOf="@+id/tf_phone"
@@ -120,7 +120,6 @@
         android:layout_height="wrap_content"
         android:hint="@string/repeat_password"
         app:passwordToggleEnabled="true"
-        app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="@+id/tf_password"
         app:layout_constraintStart_toStartOf="@+id/tf_password"
         app:layout_constraintTop_toBottomOf="@id/tf_password">
