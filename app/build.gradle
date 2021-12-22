@@ -6,6 +6,7 @@ plugins {
     id 'androidx.navigation.safeargs'
     id 'com.google.firebase.crashlytics'
 }
+apply plugin: 'kotlin-android'
 
 android {
     compileSdk 31
@@ -77,7 +78,7 @@ dependencies {
 
 //  Glide dependency
     implementation 'com.github.bumptech.glide:glide:4.12.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
 
     //  Circular image view library
     implementation 'de.hdodenhof:circleimageview:3.1.0'
@@ -105,4 +106,6 @@ dependencies {
 
     // Add the Firebase Crashlytics SDK.
     implementation 'com.google.firebase:firebase-crashlytics:18.2.5'
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

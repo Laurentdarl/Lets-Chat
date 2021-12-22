@@ -1,22 +1,12 @@
 package com.laurentdarl.letschatapplication.data.models
 
+import java.io.Serializable
+
 data class User(
     val userName: String? = null,
     val email: String? = null,
+    val phone: String? = null,
     val userId: String? = null,
-    val image: String? = null
-) {}
+    val profileImage: String? = null
+): Serializable {}
 
-//class User {
-//    var userName: String? = null
-//    var email: String? = null
-//    var userId: String? = null
-//
-//    constructor() {}
-//
-//    constructor(userName: String?, email: String?, userId: String?) {
-//        this.userName = userName
-//        this.email = email
-//        this.userId = userId
-//    }
-//}
