@@ -13,6 +13,8 @@ import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.laurentdarl.letschatapplication.R
 import com.laurentdarl.letschatapplication.databinding.ActivityMainBinding
 import com.laurentdarl.letschatapplication.presentation.fragments.registration.SignInFragment
@@ -28,6 +30,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        Firebase.database.setPersistenceEnabled(true)
 
         val navHost = supportFragmentManager.findFragmentById(R.id.chat_container) as NavHostFragment
         val navController = navHost.navController

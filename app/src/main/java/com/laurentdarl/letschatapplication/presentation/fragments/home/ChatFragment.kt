@@ -1,5 +1,7 @@
 package com.laurentdarl.letschatapplication.presentation.fragments.home
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -10,10 +12,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.messaging.FirebaseMessaging
 import com.laurentdarl.letschatapplication.data.models.User
 import com.laurentdarl.letschatapplication.data.adapters.UserAdapter
 import com.laurentdarl.letschatapplication.databinding.FragmentChatBinding
 import com.laurentdarl.letschatapplication.R
+import com.laurentdarl.letschatapplication.domain.firebase.FirebaseService
 
 class ChatFragment : Fragment() {
 
@@ -36,6 +40,13 @@ class ChatFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentChatBinding.inflate(layoutInflater)
+
+//        FirebaseService.sharedPref = SharedPreferences("sharedPref", Context.MODE_PRIVATE)
+        FirebaseMessaging.getInstance().token.addOnSuccessListener { result ->
+            if(result != null){
+                FirebaseService.token = result
+            }
+        }
 
         getUsersList()
         userAdapter = UserAdapter(requireContext()) {}
@@ -90,6 +101,9 @@ class ChatFragment : Fragment() {
 
     private fun getUsersList() {
         val firebaseUser = auth.currentUser
+        val userId = firebaseUser!!.uid
+        FirebaseMessaging.getInstance().subscribeToTopic("/topics/$userId")
+
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -100,6 +114,8 @@ class ChatFragment : Fragment() {
                 for (dataSnapshot: DataSnapshot in snapshot.children) {
                     val user = dataSnapshot.getValue(User::class.java)
                     if (!user!!.userId.equals(firebaseUser!!.uid)) {
+//                        val userId = firebaseUser.uid
+//                        FirebaseMessaging.getInstance().subscribeToTopic("/topics/$userId")
                         userList.add(user)
                     }
                 }
@@ -115,11 +131,6 @@ class ChatFragment : Fragment() {
                 Toast.makeText(requireContext(), error.message, Toast.LENGTH_SHORT).show()
             }
         })
-    }
-
-    fun myFragmentFunction(){
-        val context = context ?: return // early return using Elvis operator
-        context.applicationContext // guaranteed non-null context at this point
     }
 
     override fun onDestroyView() {

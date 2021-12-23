@@ -90,11 +90,18 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
 
+    // Volley dependency (I will not use it though)
+    implementation 'com.android.volley:volley:1.2.1'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.google.http-client:google-http-client-gson:1.19.0'
+
+
     // Import the Firebase BoM
     implementation platform('com.google.firebase:firebase-bom:29.0.0')
 
      // Firebase dependencies
-    implementation 'com.google.firebase:firebase-core:20.0.0'
+    implementation 'com.google.firebase:firebase-core:20.0.2'
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
     implementation 'com.google.firebase:firebase-firestore-ktx'
@@ -105,7 +112,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:23.0.0'
 
     // Add the Firebase Crashlytics SDK.
-    implementation 'com.google.firebase:firebase-crashlytics:18.2.5'
+    implementation 'com.google.firebase:firebase-crashlytics:18.2.6'
     implementation "androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
